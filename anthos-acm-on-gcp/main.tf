@@ -23,6 +23,7 @@ resource "google_container_cluster" "cluster" {
 #https://console.developers.google.com/apis/api/gkehub.googleapis.com/overview?project=943790635148
 #https://console.developers.google.com/apis/api/gkehub.googleapis.com/overview?project=943790635148
 #https://console.developers.google.com/apis/api/cloudresourcemanager.googleapis.com/overview?project=943790635148
+#anthosconfigmanagement.googleapis.com
 
 
 resource "google_gke_hub_membership" "membership" {
