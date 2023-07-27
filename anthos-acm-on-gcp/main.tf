@@ -19,6 +19,10 @@ resource "google_container_cluster" "cluster" {
 #resource "google_project_service" "project" {
 #  project = var.project_id
 #}
+#enable apis:
+#https://console.developers.google.com/apis/api/gkehub.googleapis.com/overview?project=943790635148
+#https://console.developers.google.com/apis/api/gkehub.googleapis.com/overview?project=943790635148
+#https://console.developers.google.com/apis/api/cloudresourcemanager.googleapis.com/overview?project=943790635148
 
 
 resource "google_gke_hub_membership" "membership" {
