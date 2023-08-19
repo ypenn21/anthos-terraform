@@ -49,6 +49,6 @@ resource "google_gke_hub_membership" "membership" {
 resource "google_project_service" "project" {
   project = var.project_id
   #service = "mesh.googleapis.com"
-
+  service = "gkehub.googleapis.com"
   disable_dependent_services = true
 }
