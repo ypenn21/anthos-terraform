@@ -4,7 +4,14 @@ resource "google_container_cluster" "cluster" {
   location           = var.zone
   initial_node_count = 1
   provider           = google-beta
-  resource_labels    = { mesh_id : "proj-${data.google_project.project.number}" }
+  #ip_allocation_policy {
+    #cluster_ipv4_cidr_block  = "192.168.0.0/16"
+    #services_ipv4_cidr_block = "192.169.0.0/24"
+    #use_ip_aliases           = "true"  
+    #cluster_secondary_range_name  = "192.168.0.0/24"
+    #services_secondary_range_name = "192.168.1.0/24"
+  #}
+  #resource_labels    = { mesh_id : "proj-${data.google_project.project.number}" }
   workload_identity_config {
     workload_pool = "${data.google_project.project.project_id}.svc.id.goog"
   }
@@ -41,7 +48,7 @@ resource "google_gke_hub_membership" "membership" {
 
 resource "google_project_service" "project" {
   project = var.project_id
-  service = "mesh.googleapis.com"
+  #service = "mesh.googleapis.com"
 
   disable_dependent_services = true
 }
